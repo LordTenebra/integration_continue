@@ -15,4 +15,12 @@ node {
       sh "./mvnw compile"
     }
   }
+  
+  stage('Unit-Tests') {
+    withEnv(["PATH+jdk=${tool 'Java 11'}/bin"]) {
+      if ($ {env.SKIP_TESTS}) {
+        sh "./mvnw test"
+      }
+    }
+  }
 }
