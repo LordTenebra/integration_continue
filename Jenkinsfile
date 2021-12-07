@@ -9,4 +9,10 @@ node {
     }
     sh "chmod +x ./mvnw"
   }
+  
+  stage('Build') {
+    withEnv(["PATH+jdk=${tool 'JAVA 11'}/bin"]) {
+      sh "./nvnw compile"
+    }
+  }
 }
