@@ -26,7 +26,7 @@ node {
   
   stage('Sonar') {
     withEnv(["PATH+jdk=${tool 'Java 11'}/bin"]) {
-      sh "./mvnw verify sonar:sonar -Dsonar.login=\"$Sonarcloud\""
+      sh "./mvnw verify sonar:sonar -Dsonar.login=$Sonarcloud"
     }
   }
   
