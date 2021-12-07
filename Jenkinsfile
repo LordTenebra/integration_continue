@@ -13,6 +13,7 @@ node {
   stage('Build') {
     withEnv(["PATH+jdk=${tool 'Java 11'}/bin"]) {
       sh "./mvnw compile"
+      archiveArtifacts artifacts: '**/target/*.*'
     }
   }
   
