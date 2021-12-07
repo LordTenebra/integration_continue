@@ -18,7 +18,7 @@ node {
   
   stage('Unit-Tests') {
     withEnv(["PATH+jdk=${tool 'Java 11'}/bin"]) {
-      if ($ {env.SKIP_TESTS}) {
+      if (${env.SKIP_TESTS}) {
         sh "./mvnw test"
       }
     }
