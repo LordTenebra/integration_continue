@@ -11,7 +11,7 @@ node {
   }
   
   stage('Build') {
-    withEnv(["PATH+jdk=${tool 'JAVA 11'}/bin"]) {
+    withEnv(["PATH+jdk=${tool 'Java 11'}/bin"]) {
       sh "./nvnw compile"
     }
   }
